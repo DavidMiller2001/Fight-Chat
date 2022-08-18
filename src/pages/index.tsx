@@ -9,16 +9,28 @@ const Home: NextPage = () => {
 
   if (status === 'unauthenticated') {
     return (
-      <>
-        <button onClick={() => signIn()}>Sign In</button>
-      </>
+      <div className='bg-slate-800 h-screen text-white flex justify-center items-center'>
+        <button
+          className='bg-purple-300 rounded-lg px-4 py-2'
+          onClick={() => signIn()}
+        >
+          Sign In
+        </button>
+      </div>
     )
   }
 
   return (
     <>
-      <h1>You are Signed In</h1>
-      <button onClick={() => signOut()}>Sign Out</button>
+      <div className='bg-slate-800 w-screen h-screen text-white p-4 flex flex-col justify-center items-center relative'>
+        <button
+          className='bg-purple-300 px-4 py-2 text-xl rounded-lg absolute bottom-12'
+          onClick={() => signOut()}
+        >
+          Sign Out
+        </button>
+        <div className='bg-gray-500 h-screen w-screen text-container'></div>
+      </div>
     </>
   )
 }
